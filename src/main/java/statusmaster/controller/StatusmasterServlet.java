@@ -641,9 +641,9 @@ e.printStackTrace();
    
        
         request.setAttribute("emp", existinguser);
-           List < AuthMaster > listAuthor =   statusmasterdao.selectAllauthormaster();
+           List < AuthMaster > listAuthor =   statusmasterdao.selectAllauthormaster2();
            request.setAttribute("listAuthor", listAuthor);
-           RequestDispatcher dispatcher = request.getRequestDispatcher("userlist3(2).jsp");
+           RequestDispatcher dispatcher = request.getRequestDispatcher("userlist3.jsp");
            dispatcher.forward(request, response);
        }
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
@@ -949,15 +949,15 @@ auth.setUserList(urerList);
     	 String reqFor = request.getParameter("reqFor");
 	        String active= request.getParameter("active");
 	        String username = request.getParameter("username");
-	        String[] strSplit =  username.split("/");
-			
-			String  spltusername   = strSplit[0];
+//	        String[] strSplit =  username.split("/");
+//			
+//			String  spltusername   = strSplit[0];
 	        String emailid= request.getParameter("emailid");
-	        String contactperson = request.getParameter("contactperson");
-         String[] strcontactperson =  contactperson.split("/");
-			String  spltcontactperson   = strcontactperson[0];
-	        String cemailid= request.getParameter("cemailid");
-	        AuthMaster newauthor = new AuthMaster(reqFor,active,spltusername,emailid,spltcontactperson,cemailid);
+//	        String contactperson = request.getParameter("contactperson");
+//         String[] strcontactperson =  contactperson.split("/");
+//			String  spltcontactperson   = strcontactperson[0];
+	       
+	        AuthMaster newauthor = new AuthMaster(reqFor,active,username,emailid);
 	        StatusmasterDAO.insertAuthorisation(newauthor);
 	    	final String empname = request.getParameter("empname");
 	        Statusmaster existinguser = statusmasterdao.selectemp(empname);
@@ -1042,13 +1042,13 @@ auth.setUserList(urerList);
 			
 			String  spltusername   = strSplit[0];
 	        String emailid= request.getParameter("emailid");
-	        String contactperson = request.getParameter("contactperson");
-        String[] strcontactperson =  contactperson.split("/");
-			String  spltcontactperson   = strcontactperson[0];
-		       String cemailid= request.getParameter("cemailid");
+//	        String contactperson = request.getParameter("contactperson");
+//        String[] strcontactperson =  contactperson.split("/");
+//			String  spltcontactperson   = strcontactperson[0];
+//		       String cemailid= request.getParameter("cemailid");
    
            
-           AuthMaster book = new AuthMaster(id,reqFor,active,spltusername,emailid,spltcontactperson,cemailid);
+           AuthMaster book = new AuthMaster(id,reqFor,active,spltusername,emailid);
            StatusmasterDAO.updateauthor(book);
         final String empname = request.getParameter("empname");
            Statusmaster existinguser = statusmasterdao.selectemp(empname);

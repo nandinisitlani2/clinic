@@ -204,15 +204,15 @@ element.innerHTML = pagerHtml;
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                             <li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value='${emp.empname}' />"class="nav-link"style="color:white;padding:10px;position:relative;top:-10px;right:20px"><b>Dash Board</b></a></li>
                   
-                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User List</b></a></li>
             
                           
             
-                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Authorisation Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Doctors Schedule</b></a></li>
                   
                        
                         
-                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Requirement(s)</b></a></li> 
+                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Appointment(s)</b></a></li> 
                              <li><a href="<%=request.getContextPath()%>/filterform?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-2px;right:20px"><b>Report</b></a></li> 
                            <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="color:white;padding:10px;position:relative;top:0px;right:20px"><b>Logout</b></a></li>
    <li><a  class="nav-link"style="position:relative;top:-325px;right:-150px;color:white" onclick="closeNav() "><b>X</b></a></li>
@@ -238,7 +238,7 @@ element.innerHTML = pagerHtml;
            
 
                 <div class="container">
-                    <h5 style="position:relative;top:-40px"class="text-center"><b>Authorisation Master</b> </h5>
+                    <h5 style="position:relative;top:-40px"class="text-center"><b>Doctor's Schedule</b> </h5>
                     <hr style="position:relative;top:-40px">
                    
 
@@ -249,13 +249,13 @@ element.innerHTML = pagerHtml;
                         <thead>
                             <tr style="font-size:14px;width:100px;height:30px;">
                         <!--     <th >ID</th> -->
-                                <th>Requirement For</th>
+                                <th>Speciality</th>
                              
-                                <th>Authorized Person</th>
+                                <th>Name</th>
                                 <th>Email Id</th>
-                                 <th>Contact Person</th>
+                            <!--      <th>Contact Person</th> -->
                                   <th>Email Id</th>
-                                     <th>Active</th>
+                                     <th>Availablity</th>
                              
                                
                             </tr>
@@ -282,12 +282,12 @@ element.innerHTML = pagerHtml;
                                         <c:out value="${authorisation.emailid}" />
                                         </td>
                                         <td>
-                                        <c:out value="${authorisation.contactperson}" />
-                                        </td>
-                                   
+                                      <%--   <c:out value="${authorisation.contactperson}" />
+                                        </td> --%>
+                                   <%-- 
                                          <td>
                                         <c:out value="${authorisation.cemailid}" />
-                                        </td>
+                                        </td> --%>
                                             <td>
                               <c:out value="${authorisation.active}"/>
                               </td>

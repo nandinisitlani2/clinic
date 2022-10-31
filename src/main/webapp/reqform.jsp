@@ -168,7 +168,7 @@
                              <h2 style="font-size:20px;position:relative;left:180px;bottom:20px">
                          
                              
-                                   <b> Requirement Form</b>
+                                   <b> Appointment Form</b>
                            
                             </h2>
                             <h5>
@@ -188,7 +188,7 @@
 
                          <c:if test="${req==null}">
                      <fieldset class="form-group"style="font-size:14px;position:relative;bottom:40px">
-                            <label style="color:grey;"><b>Requirement By</b></label> <input style="font-family:verdana;font-size:10pt;height:26px;position:relative;left:40px;" readonly="readonly"type="text" onkeyup="this.value=this.value.toUpperCase();"class="normal" size="20" maxlength="20" style="text-transform:uppercase "value="<c:out value='${emp.empname}' />" class="form-control" name="reqby" required="required">
+                            <label style="color:grey;"><b>Appointment By</b></label> <input style="font-family:verdana;font-size:10pt;height:26px;position:relative;left:40px;" readonly="readonly"type="text" onkeyup="this.value=this.value.toUpperCase();"class="normal" size="20" maxlength="20" style="text-transform:uppercase "value="<c:out value='${emp.empname}' />" class="form-control" name="reqby" required="required">
                         </fieldset>
                    
                          
@@ -199,13 +199,14 @@
 
 
 <fieldset class="form-group"style="font-size:14px;position:relative;bottom:40px">
-    <label style="color:grey;"><b> Requirement For</b><label>
+    <label style="color:grey;"><b> Appointment For</b><label>
+     
        <select style="position:relative;left:40px;font-size:10pt;height:26px;"id="reqFor"required ="required" name="reqfor"value="<c:out value='${req.reqfor}' />"  onchange="changeFunc(this)"  >
        
          <option value=""selected="selected" >Select</option>
        <c:forEach var="auth" items="${auth.getAuthList()}">
        
-       <option value="${auth.reqFor}/${auth.username}/${auth.contactperson}" >${auth.reqFor}</option>
+       <option value="${auth.reqFor}/${auth.username}" >${auth.reqFor}</option>
        
        
        </c:forEach>
@@ -215,10 +216,10 @@
 </fieldset>
 
 <fieldset class="form-group"style="font-size:14px;position:relative;bottom:50px">
-                            <label style="color:grey"><b>Authorized Person</b></label> <input required ="required"  readonly="readonly"id="authperson"type="text" onkeyup="this.value=this.value.toUpperCase();"class="normal" size="20" maxlength="100" style="font-size:10pt;text-transform:uppercase;position:relative;left:20px;height:26px;"value="<c:out value='${req.authperson}' />" class="form-control" name="authperson" required="required">
+                            <label style="color:grey"><b>Doctor Name</b></label> <input required ="required"  readonly="readonly"id="authperson"type="text" onkeyup="this.value=this.value.toUpperCase();"class="normal" size="20" maxlength="100" style="font-size:10pt;text-transform:uppercase;position:relative;left:20px;height:26px;"value="<c:out value='${req.authperson}' />" class="form-control" name="authperson" required="required">
                             </fieldset>
                 <fieldset class="form-group"style="font-size:14px;position:relative;bottom:50px" >
- <label style="color:grey; vertical-align:middle"><b>Requirement Details</b></label>
+ <label style="color:grey; vertical-align:middle"><b>AppointmentDetails</b></label>
    
              <textarea name="reqdetails" rows="6" cols="40" required ="required" style= "vertical-align:middle;position:relative;left:-80px;font-size:10pt"> <c:out value='${req.reqdetails}' /> </textarea>
                   

@@ -18,13 +18,13 @@
             <header>
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #7fdbd4">
                     <div>
-                        <a href="https://www.javaguides.net" class="navbar-brand"style="color:white"> Requirement tracking system</a>
+                        <a href="https://www.javaguides.net" class="navbar-brand"style="color:white"> CLINIC MANAGMENT</a>
                     </div>
 
                     <ul class="navbar-nav">
                      
                      
-                          <li><a href="<%=request.getContextPath()%>/Authorisationmaster2" class="nav-link"><b>Authorisationmaster</b></a></li>
+                          <li><a href="<%=request.getContextPath()%>/Authorisationmaster2" class="nav-link"><b>Doctor's Schedule</b></a></li>
                              <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="positon:relative;left:480px">Logout</a></li>
                         
                     </ul>
@@ -45,10 +45,10 @@
                         <caption>
                             <h2 style="font-size:20px;">
                                 <c:if test="${authorisation!= null}">
-                                    Edit Requirement
+                                    Edit Appointment
                                 </c:if>
                                 <c:if test="${authorisation == null}">
-                                    Add New Requirementt
+                                    Add New Appointment
                                 </c:if>
                             </h2>
                         </caption>
@@ -59,7 +59,7 @@
                         
 <c:if test="${authorisation==null }"> 
                                  <fieldset class="form-group">
-    <label> Requirement <label>
+    <label> Appointment <label>
        <select id="reqFor" name="reqFor"  style="position:relative;left:50px" >
        
        

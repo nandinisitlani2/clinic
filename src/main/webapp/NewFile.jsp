@@ -13,7 +13,7 @@
                 
              <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #7fdbd4;width:1300px;height:55px">
                     <div>
-                        <a  class="navbar-brand"style="color:white;font:verdana;font-size:25px"> <b>Requirement Tracking System</b></a>
+                        <a  class="navbar-brand"style="color:white;font:verdana;font-size:25px"> <b>Clinic Management</b></a>
                                
                     </div>
 <div text-center>
@@ -66,15 +66,15 @@
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                             <li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value='${emp.empname}' />"class="nav-link"style="color:white;padding:10px;position:relative;top:-10px;right:20px"><b>Dash Board</b></a></li>
                   
-                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User List</b></a></li>
             
                           
             
-                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Authorisation Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Doctor's Schedule</b></a></li>
                   
                        
                         
-                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Requirement(s)</b></a></li> 
+                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Appointment(s)</b></a></li> 
                              <li><a href="<%=request.getContextPath()%>/filterform?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-2px;right:20px"><b>Report</b></a></li> 
                            <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="color:white;padding:10px;position:relative;top:0px;right:20px"><b>Logout</b></a></li>
    <li><a  class="nav-link"style="position:relative;top:-325px;right:-150px;color:white" onclick="closeNav() "><b>X</b></a></li>
@@ -129,12 +129,12 @@
 <c:if test="${authorisation==null }">
 
                                  <fieldset class="form-group"style="font-size:14px">
-    <label style="color:grey"> <b>Requirement For</b> <label>
+    <label style="color:grey"> <b>Speciality</b> <label>
        <select id="reqFor" name="reqFor"  style="height:26px;font-size:10pt;position:relative; left:22px; width:136px" >
        <option>select</option>
-            <option value= Hardware > Hardware</option>
-        <option value= Software> Software</option>
-         <option value= Office_Utilities> Office Utilities</option>
+            <option value=Cardiovascula  > Cardiovascular</option>
+        <option value= Neurologists>Neurologists</option>
+         <option value=Dentist > Dentist</option>
        
         </select>
  
@@ -143,7 +143,7 @@
 
 
 
-<fieldset style="position:relative;bottom:8px;font-size:14px">
+<%-- <fieldset style="position:relative;bottom:8px;font-size:14px">
     <label style="color:grey"><b> Authorized Person</b><label>
        <select id="username" name="username"  onchange="changeFunc(this)" style="height:26px;position:relative;left:13px;font-size:10pt;width:130px" >
        <option> select</option>
@@ -158,7 +158,7 @@
         </select>
        
      
-</fieldset>
+</fieldset> --%>
 <%--
 <%
 //**Should I input the codes here?**
@@ -173,9 +173,12 @@
                             <label style="color:grey"><b>eMail Id</b></label> <input id="emaill" type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="50" style="height:26px;font-size:10pt;text-transform:uppercase;position:relative;left:90px;"value="<c:out value='${authorisation.emailId}' />" class="form-control" name="emailid" required="required">
                         </fieldset>
                  
+                  <fieldset id="username"class="form-group"style="font-size:14px">
+                            <label style="color:grey"><b>Name</b></label> <input id="username" type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="50" style="height:26px;font-size:10pt;text-transform:uppercase;position:relative;left:90px;"value="<c:out value='${authorisation.username}' />" class="form-control" name="username" required="required">
+                        </fieldset>
                  
                  
-                 <fieldset style="position:relative;bottom:8px;font-size:14px"">
+                 <<%-- fieldset style="position:relative;bottom:8px;font-size:14px"">
     <label style="color:grey"><b>Contact Person</b><label>
        <select id="contactperson" name="contactperson" value="<c:out value='${authorisation.contactperson}' />" onchange="changeFunc3(this)" style="height:26px;font-size:10pt;position:relative;left:38px;width:130px" >
        
@@ -190,7 +193,7 @@
         </select>
        
      
-</fieldset>
+</fieldset> --%>
 <%--
 <%
 //**Should I input the codes here?**
@@ -201,13 +204,17 @@
         }
 %>
 </fieldset>    --%>
-                                <fieldset id="cemail"class="form-group"style="font-size:14px">
+                               <%--  <fieldset id="cemail"class="form-group"style="font-size:14px">
                             <label style="color:grey"><b>eMail Id</b></label> <input id="cemaill" type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="50" style="height:26px;font-size:10pt;text-transform:uppercase;position:relative;left:85px;"value="<c:out value='${authorisation.cemailId}' />" class="form-control" name="cemailid" required="required">
                         </fieldset>
+                        
+                          --%>
+                         <label style="color:grey"><b>Availability</b></label> <input type="checkbox" onkeyup="this.value=this.value.toUpperCase();"style="width:15px;hieght:15px;position:relative;bottom:28px;left:155px;font-size:10pt;" value="<c:out value='Yes' />" class="form-control" name="active" checked>          
+                        
  </c:if>
 <c:if test="${authorisation!= null }">
      <fieldset style="position:relative;bottom:8px;font-size:14px"">
-    <label style="color:grey"><b> Requirement For</b><label>
+    <label style="color:grey"><b> Requirement  For</b><label>
        <select id="username" name="reqFor"  onchange="changeFunc(this)" style="height:26px;position:relative;left:29px;font-size:10pt;width:130px" >
        
             <option  value="<c:out value='${authorisation.reqFor}'/>" selected="selected">${authorisation.reqFor} </option>
@@ -271,7 +278,7 @@
                          <fieldset class="form-group"style="font-size:14px">
                         <c:if test="${authorisation.active=='Yes'}">
                         <input type="hidden" value="<c:out value='No'/>" class="form-control" name="active">
-                         <label style="color:grey"><b>Active</b></label> <input type="checkbox" onkeyup="this.value=this.value.toUpperCase();"style="width:15px;hieght:15px;position:relative;bottom:28px;left:155px;font-size:10pt;" value="<c:out value='Yes' />" class="form-control" name="active" checked>
+                         <label style="color:grey"><b>Availability</b></label> <input type="checkbox" onkeyup="this.value=this.value.toUpperCase();"style="width:15px;hieght:15px;position:relative;bottom:28px;left:155px;font-size:10pt;" value="<c:out value='Yes' />" class="form-control" name="active" checked>
                          
               </c:if>
                <c:if test="${authorisation.active=='No'}">
@@ -279,6 +286,8 @@
                          <input type="hidden" value="<c:out value='No'/>" class="form-control" name="active">
                         </c:if>
                         </fieldset>
+                        
+                           
 </c:if>
 
 

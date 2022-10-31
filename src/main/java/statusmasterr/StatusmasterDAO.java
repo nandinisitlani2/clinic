@@ -52,13 +52,13 @@ public class StatusmasterDAO {
         private static final String SELECT_ALL_usermaster = "select * from usermasterr order by empname";
         private static final String DELETE_usermaster_SQL = "delete from usermasterr where eid = ?;";
         private static final String UPDATE_usermaster_SQL = "update usermasterr set empname = ?,ehide= ?,loginname= ?,passwordd= ?,emailid= ?,user= ? where eid = ?;";
-        private static final String INSERT_authorisation_SQL = "INSERT INTO authorisationmaster" + "  (reqFor,active,username,emailid,contactperson,cemailid) VALUES " +
-                " (?, ?,?,?,?,?);";
+        private static final String INSERT_authorisation_SQL = "INSERT INTO authorisationmaster" + "  (reqFor,active,username,emailid) VALUES " +
+                " (?, ?,?,?);";
 
-            private static final String SELECT_from_authorisationmaster = "select id,reqFor,active,username,emailid,cemailid,contactperson,ConDate,MonDate from authorisationmaster where id =?";
+            private static final String SELECT_from_authorisationmaster = "select id,reqFor,active,username,emailid,ConDate,MonDate from authorisationmaster where id =?";
             private static final String SELECT_ALL_authorisationmaster = "select * from authorisationmaster order by username";
             private static final String DELETE_authorisationmaster_SQL = "delete from authorisationmaster where id = ?;";
-            private static final String UPDATE_authorisationmaster_SQL = "update authorisationmaster set reqFor = ?,active= ?,username=?,emailid=?,contactperson=?,cemailid=? where id = ?;";
+            private static final String UPDATE_authorisationmaster_SQL = "update authorisationmaster set reqFor = ?,active= ?,username=?,emailid=? where id = ?;";
 private static final String SELECT_EMAIL="select emailid from usermasterr where empname=?;";
     public StatusmasterDAO() {}
 
@@ -231,8 +231,7 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
 			  preparedStatement.setString(2, "Yes");
 			  preparedStatement.setString(3, authorisation.getUsername());
 			  preparedStatement.setString(4, authorisation.getemailid());
-			  preparedStatement.setString(5, authorisation.getContactperson());
-			  preparedStatement.setString(6, authorisation.getCemailid());
+		
 			 
 				/*
 				 * preparedStatement.setString(1, "abc"); preparedStatement.setString(2, "yes");
@@ -412,11 +411,11 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
                     String active = rs.getString("active");
                     String username = rs.getString("username");
                     String emailid = rs.getString("emailid");
-                    String contactperson = rs.getString("contactperson");
-                    String cemailid = rs.getString("cemailid");
+//                    String contactperson = rs.getString("contactperson");
+//                    String cemailid = rs.getString("cemailid");
                     String ConDate = rs.getDate("ConDate").toString();
                     String MonDate = rs.getDate("MonDate").toString();
-                    authorisation= new AuthMaster(id,reqFor,active,username,emailid,contactperson,cemailid,ConDate,MonDate);
+                    authorisation= new AuthMaster(id,reqFor,active,username,emailid,ConDate,MonDate);
                 }
             } catch (SQLException e) {
                 printSQLException(e);
@@ -429,7 +428,7 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
             // Step 1: Establishing a Connection
             try (Connection connection = getConnection();
                 // Step 2:Create a statement using connection object
-                PreparedStatement preparedStatement = connection.prepareStatement(    "select id,reqFor,active,username,emailid,cemailid,contactperson,ConDate,MonDate from authorisationmaster where username =?");) {
+                PreparedStatement preparedStatement = connection.prepareStatement(    "select id,reqFor,active,username,emailid,ConDate,MonDate from authorisationmaster where username =?");) {
                 preparedStatement.setString(1, username);
                
                 
@@ -444,11 +443,11 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
                     String active = rs.getString("active");
                
                     String emailid = rs.getString("emailid");
-                    String contactperson = rs.getString("contactperson");
-                    String cemailid = rs.getString("cemailid");
+//                    String contactperson = rs.getString("contactperson");
+//                    String cemailid = rs.getString("cemailid");
                     String ConDate = rs.getDate("ConDate").toString();
                     String MonDate = rs.getDate("MonDate").toString();
-                    authorisation= new AuthMaster(id,reqFor,active,username,emailid,contactperson,cemailid,ConDate,MonDate);
+                    authorisation= new AuthMaster(id,reqFor,active,username,emailid,ConDate,MonDate);
                 }
             } catch (SQLException e) {
                 printSQLException(e);
@@ -547,8 +546,8 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
                 String passwordd = rs.getString("passwordd");
               
                 String emailid = rs.getString("emailid");
-                String ConDate = rs.getDate("ConDate").toString();
-                String MonDate = rs.getDate("MonDate").toString();    
+//                String ConDate = rs.getDate("ConDate").toString();
+//                String MonDate = rs.getDate("MonDate").toString();    
                 UserMaster  u1= new UserMaster();
                 u1.setUserid(id);
                 u1.setEmpname(empname);
@@ -575,16 +574,16 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
           
                 String emailid = rs.getString("emailid");
                 String username = rs.getString("username");
-                String cemailid = rs.getString("cemailid");
-                String contactperson = rs.getString("contactperson");
+//                String cemailid = rs.getString("cemailid");
+//                String contactperson = rs.getString("contactperson");
                  
                 AuthMaster A1=new AuthMaster();
                 A1.setId(id);
                 A1.setUsername(username);
                 A1.setReqFor(reqFor);
                 A1.setemailid(emailid);
-                A1.setContactperson(contactperson);
-                A1.setCemailid(cemailid);
+//                A1.setContactperson(contactperson);
+//                A1.setCemailid(cemailid);
            
                 
                 auth.add(A1);
@@ -607,11 +606,34 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
                 String active = rs.getString("active");
                 String username = rs.getString("username");
                 String emailid = rs.getString("emailid");
-                String contactperson = rs.getString("contactperson");
-                String cemailid = rs.getString("cemailid");
+//                String contactperson = rs.getString("contactperson");
+//                String cemailid = rs.getString("cemailid");
                 String ConDate = rs.getDate("ConDate").toString();
                 String MonDate = rs.getDate("MonDate").toString();    
-                usermasterr.add(new AuthMaster(id, reqFor,active,username,emailid,contactperson,cemailid,ConDate,MonDate));
+                usermasterr.add(new AuthMaster(id, reqFor,active,username,emailid,ConDate,MonDate));
+                
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return usermasterr;}
+    public  List < AuthMaster> selectAllauthormaster2()  {
+        List < AuthMaster > usermasterr = new ArrayList < > ();
+        try (Connection connection = getConnection();     
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from authorisationmaster where active='yes' order by id DESC");) {
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id=rs.getInt("id");
+                String reqFor = rs.getString("reqFor");
+                String active = rs.getString("active");
+                String username = rs.getString("username");
+                String emailid = rs.getString("emailid");
+//                String contactperson = rs.getString("contactperson");
+//                String cemailid = rs.getString("cemailid");
+                String ConDate = rs.getDate("ConDate").toString();
+                String MonDate = rs.getDate("MonDate").toString();    
+                usermasterr.add(new AuthMaster(id, reqFor,active,username,emailid,ConDate,MonDate));
                 
             }
         } catch (SQLException e) {
@@ -1182,8 +1204,8 @@ private static final String SELECT_EMAIL="select emailid from usermasterr where 
             statement.setString(2, authorisation.getActive());
             statement.setString(3, authorisation.getUsername());
             statement.setString(4, authorisation.getemailid());
-            statement.setString(5, authorisation.getContactperson());
-            statement.setString(6, authorisation.getCemailid());
+//            statement.setString(5, authorisation.getContactperson());
+//            statement.setString(6, authorisation.getCemailid());
             statement.setInt(7,authorisation.getId());
             rowUpdated = statement.executeUpdate() > 0;
         }

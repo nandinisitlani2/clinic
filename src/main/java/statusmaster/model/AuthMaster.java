@@ -64,30 +64,17 @@ public class AuthMaster {
 	}
 	private String ConDate;
 	private String MonDate;
-	private String contactperson;
-	public String getContactperson() {
-		return contactperson;
-	}
-	public void setContactperson(String contactperson) {
-		this.contactperson = contactperson;
-	}
-	public String getCemailid() {
-		return cemailid;
-	}
-	public void setCemailid(String cemailid) {
-		this.cemailid = cemailid;
-	}
-	private String cemailid;
 	
-	 public AuthMaster(int id,String reqFor, String active,String username,String emailid,String contactperson,String cemailid,String ConDate,String MonDate) {
+	
+	 public AuthMaster(int id,String reqFor, String active,String username,String emailid,String ConDate,String MonDate) {
 	        super();
 	        this.id=id;
 	        this.reqFor=reqFor;
 	        this.active=active;
 	        this.username=username;
 	        this.emailId=emailid;
-	        this.contactperson=contactperson;
-	        this.cemailid=cemailid;
+//	        this.contactperson=contactperson;
+//	        this.cemailid=cemailid;
 	        this.ConDate=ConDate;
 	        this.MonDate=MonDate;
 	       
@@ -97,28 +84,17 @@ public class AuthMaster {
 	public AuthMaster() {
 		// TODO Auto-generated constructor stub
 	}
-	public AuthMaster(int id, String reqFor, String active, String username, String emailid,String contactperson,String cemailid) {
+	public AuthMaster( String reqFor, String active, String username, String emailid) {
 		// TODO Auto-generated constructor stub
 		
 		   super();
-	        this.id=id;
+	   
 	        this.reqFor=reqFor;
 	        this.active=active;
 	        this.username=username;
 	        this.emailId=emailid;
-	 this.contactperson=contactperson;
-	 this.cemailid=cemailid;
 	}
-	public AuthMaster(String reqFor, String active, String username, String emailid, String contactperson, String cemailid) {
-	    this.reqFor=reqFor;
-        this.active=active;
-        this.username=username;
-        this.emailId=emailid;
-        this.contactperson=contactperson;
-        this.cemailid=cemailid;
-		
-		// TODO Auto-generated constructor stub
-	}
+	
 	
 	
 

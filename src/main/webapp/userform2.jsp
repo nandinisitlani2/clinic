@@ -62,7 +62,7 @@
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                             <li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value='${emp.empname}' />"class="nav-link"style="color:white;padding:10px;position:relative;top:-10px;right:20px"><b>Dash Board</b></a></li>
                   
-                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>Register Form</b></a></li>
             
                           
             
@@ -108,10 +108,10 @@
                         <caption>
                                <h2 style="font-size:18px;position:relative;left:200px;bottom:20px">
                                 <c:if test="${usermaster!= null}">
-                                    <b>User Master</b>
+                                    <b>Register</b>
                                 </c:if>
                                 <c:if test="${usermaster == null}">
-                                    <b> User Master</b>
+                                    <b>Register</b>
                                 </c:if>
                             </h2>
                         </caption>
@@ -124,10 +124,10 @@
                      
  
  <fieldset class="form-group"style="font-size:14px">
-                            <label style="color:grey"><b>Employee  Name</b></label> <input type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="20" maxlength="20" style="height:26px;font-size:10pt;text-transform:uppercase ;position:relative;left:14px"value="<c:out value='${usermaster.loginname}' />" class="form-control" name="loginname" required="required">
+                            <label style="color:grey"><b> Name</b></label> <input type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="20" maxlength="20" style="height:26px;font-size:10pt;text-transform:uppercase ;position:relative;left:14px"value="<c:out value='${usermaster.loginname}' />" class="form-control" name="loginname" required="required">
                         </fieldset>
                            <fieldset class="form-group"style="font-size:14px">
-                            <label style="color:grey"><b>Login Name</b></label> <input style="font-size:10pt;position:relative;left:50px;"type="text" onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="60" style="height:26px;text-transform:uppercase;position:relative;left:20px "value="<c:out value='${usermaster.empname}' />" class="form-control" name="empname2" required="required">
+                            <label style="color:grey"><b>User Name</b></label> <input style="font-size:10pt;position:relative;left:50px;"type="text" onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="60" style="height:26px;text-transform:uppercase;position:relative;left:20px "value="<c:out value='${usermaster.empname}' />" class="form-control" name="empname2" required="required">
                         </fieldset>
                         <fieldset class="form-group"style="font-size:14px">
                             <label style="color:grey"><b>Password</b></label> <input type="text" class="normal" size="20" maxlength="10" style="height:26px;font-size:10pt;position:relative;left:70px "value="<c:out value='${usermaster.passwordd}' />" class="form-control" name="passwordd" required="required">
@@ -142,9 +142,9 @@
        
    
        
-       <option value= Admin >                  Admin                    </option>
-        <option value= User >                  User                     </option>
-       
+       <option value= Admin >                  Clinic                   </option>
+        <option value= User >                  Doctor                   </option>
+        <option value= Admin >                 Patient
        
  
        
@@ -155,10 +155,10 @@
  </c:if>
 <c:if test="${usermaster!=null }">
                    <fieldset class="form-group"style="font-size:14px">
-                            <label style="color:grey"><b>Employee  Name</b></label> <input type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="20" maxlength="20" style="height:26px;font-size:10pt;text-transform:uppercase ;position:relative;left:14px"value="<c:out value='${usermaster.loginname}' />" class="form-control" name="loginname" required="required">
+                            <label style="color:grey"><b> Name</b></label> <input type="text"onkeyup="this.value=this.value.toUpperCase();" class="normal" size="20" maxlength="20" style="height:26px;font-size:10pt;text-transform:uppercase ;position:relative;left:14px"value="<c:out value='${usermaster.loginname}' />" class="form-control" name="loginname" required="required">
                         </fieldset>
                            <fieldset class="form-group"style="font-size:14px">
-                            <label style="color:grey"><b>Login Name</b></label> <input "type="text" onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="60" style="height:26px;font-size:10pt;text-transform:uppercase;position:relative;left:50px"value="<c:out value='${usermaster.empname}' />" class="form-control" name="empname2" required="required">
+                            <label style="color:grey"><b>User  Name</b></label> <input "type="text" onkeyup="this.value=this.value.toUpperCase();" class="normal" size="50" maxlength="60" style="height:26px;font-size:10pt;text-transform:uppercase;position:relative;left:50px"value="<c:out value='${usermaster.empname}' />" class="form-control" name="empname2" required="required">
                         </fieldset>
                      <fieldset class="form-group"style="font-size:14px">
                             <label style="color:grey"><b>Password</b></label> <input type="text" class="normal" size="20" maxlength="10" style="height:26px;font-size:10pt;position:relative;left:70px "value="<c:out value='${usermaster.passwordd}' />" class="form-control" name="passwordd" required="required">
@@ -176,8 +176,11 @@
        
      <option  value="<c:out value='${usermaster.user}'/>" selected="selected">${usermaster.user} </option>
        
-       <option value= Admin >                  Admin                    </option>
-        <option value= User >                  User                     </option>
+      
+         
+       <option value= Admin >                  Clinic                   </option>
+        <option value= User >                  Doctor                   </option>
+        <option value= Admin >                 Patient </option>
        
        
  

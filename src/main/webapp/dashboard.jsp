@@ -13,7 +13,7 @@
 
          <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #7fdbd4;width:1300px;height:55px">
                     <div>
-                        <a  class="navbar-brand"style="color:white;font:verdana;font-size:25px"> <b>Requirement Tracking System</b></a>
+                        <a  class="navbar-brand"style="color:white;font:verdana;font-size:25px"> <b>Clinic Management</b></a>
                                
                     </div>
 <div text-center>
@@ -64,15 +64,15 @@
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                             <li><a href="<%=request.getContextPath()%>/dashboard"class="nav-link"style="color:white;padding:10px;position:relative;top:-10px;right:20px"><b>Dash Board</b></a></li>
                   
-                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User Details</b></a></li>
             
                           
             
-                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Authorisation Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Doctor's Schedule</b></a></li>
                   
                        
                         
-                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Requirement(s)</b></a></li> 
+                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Appointment(s)</b></a></li> 
                              <li><a href="<%=request.getContextPath()%>/filterform?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-2px;right:20px"><b>Report</b></a></li> 
                            <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="color:white;padding:10px;position:relative;top:0px;right:20px"><b>Logout</b></a></li>
    <li><a  class="nav-link"style="position:relative;top:-325px;right:-150px;color:white" onclick="closeNav() "><b>X</b></a></li>
@@ -125,8 +125,9 @@
                        
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                            <li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value='${emp.empname}' />"class="nav-link"style="color:white;padding:10px;position:relative;top:0px;right:20px"><b>Dash Board</b></a></li>
+                                   <li><a href="<%=request.getContextPath()%>/Authorisationmaster2?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Doctor's Schedule</b></a></li>
                   
-                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:2px;right:20px"><b>Requirement(s)</b></a></li> 
+                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:2px;right:20px"><b>Appointments(s)</b></a></li> 
                       
                                                         <li><a href="<%=request.getContextPath()%>/filterform?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:4px;right:20px"><b>Report</b></a></li> 
                                                              <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="color:white;padding:10px;position:relative;top:8px;right:20px"><b>Logout</b></a></li>
@@ -150,67 +151,7 @@
 <body>
 
            <header>
-<!-- <div class="vertical-menu">
-<a class="navbar-brand"style="color:white"> Requirement Tracking System
-</a>
-</div> -->
 
-<!--
-<div class="top" >
-<a href="#" class="menu_icon"><i onclick="openNav()"class="material_icons"><div style="width:35px;height:5px;background-color:black;color:#7fdbd4;margin:6px 0"></div>
-<div style="width:35px;color:#7fdbd4;height:5px;background-color:black;margin:6px 0"></div>
-<div style="width:35px;color:#7fdbd4;height:5px;background-color:black;margin:6px 0"></div></i></a>
-</div>
-<div class="wrapper" style="display:flex; position:relative;">
-<div id="mySidenav" class="sidebar" style="position:fixed;
-width:0px;
-height:100%;
-background:#7fdbd4;
-position:fixed;
-left:0px;
-padding:30px 0;">
-
-<ul style="list-style-type:none">
-
-<li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
-<li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value = '${emp.empname}'/>"
-class="nav-link"style="color:white;padding:10px;position:relative;top:110px;right:20px"><b>Dashboard</b></a></li>
-<li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out
-value='${emp.empname}'
-/>"class="nav-link"style="color:white;padding:10px;position:relative;top:50px;right:20px"><b>User Master</b></a></li>
-<li><a
-href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out
-value='${emp.empname}'
-/>"class="nav-link"style="color:white;padding:10px;position:relative;top:70px;right:20px"><b>Authorisation Master</b></a></li>
-<li><a href="<%=request.getContextPath()%>/req?empname=<c:out
-value='${emp.empname}' />"
-class="nav-link"style="color:white;padding:10px;position:relative;top:90px;right:20px"><b>Requirement(s)</b></a></li>
-<li><a href="<%=request.getContextPath()%>/loginpage"
-class="nav-link"style="color:white;padding:10px;position:relative;top:110px;right:20px"><b>Logout</b></a></li>
-
-<li><a class="nav-link"style="position:relative;top:-210px;right:-150px;color:white"
-onclick="closeNav() "><b>X</b></a></li>
-           
-                       
-                    </ul>
-                    </div>
-                    </div>
-               
-            </header>
-            -->
-
-
-<!--
-<input type="button" class="btn btn-success"value="New/Open/Reopen" onclick="history.back(-1)"style=" font-weight:bold;font-family:Verdana;background-color:#D6EAF8;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:2px;left:300px;border-radius:5px">
-<input type="button" class="btn btn-success"value="Reverted" onclick="history.back(-1)"style=" font-weight:bold;font-family:Verdana;background-color:#F5CBA7;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:2px;left:300px;border-radius:5px">
-<input type="button" class="btn btn-success"value="Accepted" onclick="history.back(-1)"style=" font-weight:bold;font-family:Verdana;background-color:#76D7C4;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:2px;left:300px;border-radius:5px">
-<input type="button" class="btn btn-success"value="Completed" onclick="history.back(-1)"style=" font-weight:bold;font-family:Verdana;background-color:#F7DC6F;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:2px;left:300px;border-radius:5px">
-
-<form method = post action = "http://localhost:2020/RequrementManagementSystem/dashboard2.jsp">
-<input type="submit" class="btn btn-success"value="Archive" onclick="history.back(-1)"style=" font-weight:bold;font-family:Verdana;background-color:#CCD1D1;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:2px;left:300px;border-radius:5px">
-</form>
-<ul class = "navbar-nav">
--->
 
 <a href = "<%=request.getContextPath()%>/newreq?empname=<c:out value='${emp.empname}' />" class = "nav-link" style=" font-weight:bold;font-family:Verdana;background-color:#54ECDA  ;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:-22px;left:200px;border-radius:5px">New/Open/Reopen</a>
 <a href = "<%=request.getContextPath()%>/revertedreq?empname=<c:out value='${emp.empname}' />" class = "nav-link" style=" font-weight:bold;font-family:Verdana;background-color:#F1450E ;border-color:white;border-width:2px;color:white;position:relative;top:40px;width:200px;height:130px;position:relative;top:-152px;left:500px;border-radius:5px"><center>Reverted</center></a>

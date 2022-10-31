@@ -203,15 +203,15 @@ element.innerHTML = pagerHtml;
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                             <li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value='${emp.empname}' />"class="nav-link"style="color:white;padding:10px;position:relative;top:-10px;right:20px"><b>Dash Board</b></a></li>
                   
-                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/usermaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-8px;right:20px"><b>User List</b></a></li>
             
                           
             
-                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Authorisation Master</b></a></li>
+                        <li><a href="<%=request.getContextPath()%>/Authorisationmaster?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-6px;right:20px"><b>Doctor's Schedule</b></a></li>
                   
                        
                         
-                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Requirement(s)</b></a></li> 
+                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-4px;right:20px"><b>Appointment(s)</b></a></li> 
                              <li><a href="<%=request.getContextPath()%>/filterform?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:-2px;right:20px"><b>Report</b></a></li> 
                            <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="color:white;padding:10px;position:relative;top:0px;right:20px"><b>Logout</b></a></li>
    <li><a  class="nav-link"style="position:relative;top:-325px;right:-150px;color:white" onclick="closeNav() "><b>X</b></a></li>
@@ -265,7 +265,7 @@ element.innerHTML = pagerHtml;
                         <li> <a class="nav-link"style="color:white;padding:10px;position:relative;top:-20px;right:30px"><b>${emp.empname}</b></a></li>
                            <li><a href="<%=request.getContextPath()%>/dashboard?empname=<c:out value='${emp.empname}' />"class="nav-link"style="color:white;padding:10px;position:relative;top:0px;right:20px"><b>Dash Board</b></a></li>
                   
-                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:2px;right:20px"><b>Requirement(s)</b></a></li> 
+                            <li><a href="<%=request.getContextPath()%>/req?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:2px;right:20px"><b>Appointment(s)</b></a></li> 
                       
                                                         <li><a href="<%=request.getContextPath()%>/filterform?empname=<c:out value='${emp.empname}' />" class="nav-link"style="color:white;padding:10px;position:relative;top:4px;right:20px"><b> Report</b></a></li> 
                                                              <li><a href="<%=request.getContextPath()%>/loginpage" class="nav-link"style="color:white;padding:10px;position:relative;top:8px;right:20px"><b>Logout</b></a></li>
@@ -282,7 +282,7 @@ element.innerHTML = pagerHtml;
            
 
                 <div class="container">
-                    <h5 style="position:relative;top:-40px"class="text-center"><b>Requirement(s)</b> </h5>
+                    <h5 style="position:relative;top:-40px"class="text-center"><b>Appointment(s)</b> </h5>
                     <hr style="position:relative;top:-40px">
                    
 
@@ -293,12 +293,12 @@ element.innerHTML = pagerHtml;
                         <thead>
                             <tr style="font-size:14px;width:100px;height:30px;">
                         <!--     <th >ID</th> -->
-                        <th> Req No</th>
-                                <th style="width:100px;">Req By</th>
-                                <th>Req Date</th>
-                                <th style="width:100px;">Req For</th>
-                                  <th>Req Details</th>
-                                <th>Authperson</th>
+                        <th> App No</th>
+                                <th style="width:100px;">App By</th>
+                                <th>APP Date</th>
+                                <th style="width:100px;">App For</th>
+                                  <th>App Details</th>
+                                <th>Doctor</th>
                                
                                   <th>Status</th>
                              

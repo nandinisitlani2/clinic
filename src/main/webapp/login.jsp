@@ -20,6 +20,9 @@
                          <li><a href="<%=request.getContextPath()%>/loginpage?empname=<c:out value='${emp.empname}'/>" class="nav-link">Login</a></li>
                         
                     </ul>
+                    
+                    
+           
                 </nav>
 <body>
 <font face="Verdana" >
@@ -48,7 +51,8 @@
    </fieldset>
 
 
-   <input type="submit" class="btn btn-success" value="Login" style="position:relative;top:60px;left:160px;font-weight:bold;font-family:Verdana;background-color:#7fdbd4;border-color:white;border-radius:5px"/>
+   <input type="submit" class="btn btn-success" value="Login" style="position:relative;top:60px;left:120px;font-weight:bold;font-family:Verdana;background-color:#7fdbd4;border-color:white;border-radius:5px"/>
+   <a href="<%=request.getContextPath()%>/newusermaster?empname=<c:out value='${emp.empname}' />"class="btn btn-success"style="background-color:#7fdbd4;border-color:white;position:relative;top:60px;left:130px"><b>Register</b></a>
   </form>
  </div>
  
